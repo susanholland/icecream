@@ -176,25 +176,25 @@
             });
         });
 
-        // ensure that the images don't overlap
-        var yoffset = 0;
-        var xoffset = 0;
+        // ensure that the images don't overlap by setting the top of each image appropriatly...
+        var yoffset = 0;   // offset of initial image cos css attributes are not absolute
         var padding = 3;   // padding of 3px between images
         var height = 115;  // estimate because the images are not yet displayed
+
         $( ".thumb-image" ).each( function( index ) {
+
             var offset = $(this).offset( );
+
+            // save the absolute Y position of the first image...
             if (index === 0) {
-                yoffset = offset.top + height + padding;
-                xoffset = offset.left;
+                yoffset = offset.top;
             } else {
 
-                if (offset.top < yoffset ) {
-                    offset.top = yoffset;
+                // if the image is not placed correctly...
+                var newYOffset = ( height + padding ) * index;
+                if( ( offset.top - yoffset ) < newYOffset ) {
+                    $(this).css( { "top": newYOffset + "px" } );
                 }
-                offset.left = xoffset;
-                $(this).offset(offset);
-
-                yoffset += ( height + padding );
             }
         });
 
