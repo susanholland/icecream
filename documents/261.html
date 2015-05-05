@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>Notes Persons and Places</title>
+      <title>Notes Only</title>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <meta name="viewport" content="width=device-width">
@@ -50,7 +50,7 @@
 </div>		 
 
 
-      <h1 class="doc-title">Notes Persons and Places</h1>
+      <h1 class="doc-title">Notes Only</h1>
       	  <style type="text/css">
 			.humedit-add { font-size: 90%; font-style: italic; }
 			.humedit-corr { border-bottom: 1px dashed #999; }
@@ -106,7 +106,7 @@
    <table class="header block">
          <tr>
             <td class = "header name">Title:</td>
-            <td>Notes Persons and Places</td>
+            <td>Notes Only</td>
          </tr>
    
       <tr class="sep"><td colspan="2"/></tr>
@@ -132,15 +132,96 @@
    </div>
 </div>
 
-                 <div id="page-13253" class="sbs-page">
-      <div class="page-image col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            
+            <div id="reading-text" class="reading-text">
+      <div id="page-13274" class="reading-page">
+
+
+        <div class="thumb-image-div col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+        <div class="reading-div col-xs-8 col-sm-8 col-md-8 col-lg-8" id="div-1"><span data-annotation-id='13279' class='annotation humedit-note'>Lorem ipsum dolor sit amet</span>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat <span data-annotation-id='13280' class='annotation humedit-note'>cupidatat non proident, s</span>unt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[{&quot;id&quot;:13280,&quot;name&quot;:&quot;note&quot;,&quot;data&quot;:&quot;{\&quot;text\&quot;:\&quot;\\u003Cref class=&#39;catalog-popup&#39; type=&#39;reference&#39; target=&#39;https://mel-catalog-staging.herokuapp.com/api/entries/place:3906&#39;\\u003EBaden-Baden, Germany\\u003C/ref\\u003EGermany\&quot;}&quot;},{&quot;id&quot;:13279,&quot;name&quot;:&quot;note&quot;,&quot;data&quot;:&quot;{\&quot;text\&quot;:\&quot;This is a plain note with text. \&quot;}&quot;}]" />
+
       </div>
-      <div class="page col-xs-6 col-sm-6 col-md-6 col-lg-6" data-page-number="1">
-        <div class="diplomatic"><div class='line'><span data-annotation-id='13284' class='annotation humedit-note'>Lorem ipsum</span> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <span data-annotation-id='13285' class='annotation humedit-person'>commodo</span> consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat <span data-annotation-id='13286' class='annotation humedit-place'>cupidatat</span> non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 </div>
-      </div>
-      <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[{&quot;id&quot;:13286,&quot;name&quot;:&quot;place&quot;,&quot;data&quot;:&quot;{\&quot;ref\&quot;:\&quot;https://mel-catalog-staging.herokuapp.com/api/entries/artwork:14\&quot;}&quot;},{&quot;id&quot;:13285,&quot;name&quot;:&quot;person&quot;,&quot;data&quot;:&quot;{\&quot;ref\&quot;:\&quot;https://mel-catalog-staging.herokuapp.com/api/entries/person:9\&quot;}&quot;},{&quot;id&quot;:13284,&quot;name&quot;:&quot;note&quot;,&quot;data&quot;:&quot;{\&quot;text\&quot;:\&quot;\\u003Cref class=&#39;catalog-popup&#39; type=&#39;reference&#39; target=&#39;https://mel-catalog-staging.herokuapp.com/api/entries/place:3906&#39;\\u003EBaden-Baden, Germany\\u003C/ref\\u003E\&quot;}&quot;}]" />
-    </div>
+
+<script type="text/javascript">
+
+    $(document).ready( function( ) {
+
+        // get the information for all our divs and images...
+
+
+        // convert to real JSON
+        var page_divs = JSON.parse( '{&quot;1&quot;:[]}'.replace( /&quot;/g, "\"" ) );
+
+        // manually add the divs to the page once it is loaded
+        $.each( page_divs, function( i, divs ) {
+            $.each( divs, function( j, div ) {
+                if( div['id'] && div['heading'] ) {
+                    $('<h3>' + div['heading'] + '</h3>').insertBefore($(".reading-div span[data-annotation-id~='" + div['id'] + "']").filter(":first"));
+                }
+            });
+        });
+
+        // convert to real JSON
+        var images = JSON.parse( '{&quot;1&quot;:[]}'.replace( /&quot;/g, "\"" ) );
+
+        // manually add the images to the page once it is loaded
+        $.each( images, function( page, images ) {
+           $.each( images, function( index, value ) {
+               $( thumb_html( value['aid'], value['guid'], value['thumbnail_url']) ).insertBefore( $( ".reading-div span[data-annotation-id~='" + value['aid'] + "']").filter( ":first" ) );
+            });
+        });
+
+        // ensure that the images don't overlap by setting the top of each image appropriatly...
+        var yoffset = 0;   // offset of initial image cos css attributes are not absolute
+        var padding = 3;   // padding of 3px between images
+        var height = 115;  // estimate because the images are not yet displayed
+
+        $( ".thumb-image" ).each( function( index ) {
+
+            var offset = $(this).offset( );
+
+            // save the absolute Y position of the first image...
+            if (index === 0) {
+                yoffset = offset.top;
+            } else {
+
+                // if the image is not placed correctly...
+                var newYOffset = ( height + padding ) * index;
+                if( ( offset.top - yoffset ) < newYOffset ) {
+                    // place the image..
+                    $( this ).css( { "top": newYOffset + "px" } );
+                    // and ensure the page is not too short...
+                    $( this ).parent().parent( ).css( { "min-height": ( newYOffset + height ) + "px" } );
+                }
+            }
+        });
+
+        // hover over functionality...
+        $( ".thumb-image" ).hover(function( ) {
+            var aid = $( this).attr( "id").replace( "thumb-", "" );
+            $( ".reading-div span[data-annotation-id~='" + aid + "']" ).addClass( "reading-highlight");
+        }, function( ) {
+            var aid = $( this).attr( "id").replace( "thumb-", "" );
+            $( ".reading-div span[data-annotation-id~='" + aid + "']" ).removeClass( "reading-highlight");
+        });
+
+        // thumbnail click handler; call if the handler is defined, ignore otherwise.
+        $( ".thumb-image" ).click( function( ) {
+            if( typeof thumbnail_clicked === "function" ) {
+                var guid = $(this).attr("guid");
+                thumbnail_clicked(guid);
+            }
+        });
+
+    });
+
+    function thumb_html( id, guid, url ) {
+       return( "<img class='thumb-image' id='thumb-" + id + "' guid='" + guid + "' src='" + url + "'>" );
+    }
+
+</script>
 
 
       </div>
