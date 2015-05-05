@@ -141,14 +141,13 @@
       </ul>
    </div>
 
-            <div id="reading-text" class="reading-text">
-      <div id="page-13244" class="reading-page">
+            <div id="text-only" class="text-only">
+      <div id="page-13244" class="textonly-page">
 
           <a name="div_1"></a>
           <div class="heading"><h2>Div 1</h2></div>
 
-        <div class="thumb-image-div col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-        <div class="reading-div col-xs-8 col-sm-8 col-md-8 col-lg-8" id="div-1"><span data-annotation-id='13244' class='annotation humedit-div'></span><span data-annotation-id='13241' class='annotation humedit-note'>Lorem ipsum dolor</span> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <span data-annotation-id='13242' class='annotation humedit-note'>veniam, quis nostrud exercitation</span> ullamco laboris nisi ut aliquip ex ea <br/><span data-annotation-id='13245' class='annotation humedit-div'></span>commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat <span data-annotation-id='13243' class='annotation humedit-note'>cupidatat non proident</span>, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        <div class="textonly-div" id="div-1"><span data-annotation-id='13244' class='annotation humedit-div'></span><span data-annotation-id='13241' class='annotation humedit-note'>Lorem ipsum dolor</span> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <span data-annotation-id='13242' class='annotation humedit-note'>veniam, quis nostrud exercitation</span> ullamco laboris nisi ut aliquip ex ea  <span data-annotation-id='13245' class='annotation humedit-div'></span>commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat <span data-annotation-id='13243' class='annotation humedit-note'>cupidatat non proident</span>, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
         <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[{&quot;id&quot;:13245,&quot;name&quot;:&quot;div&quot;,&quot;data&quot;:&quot;{\&quot;i\&quot;:\&quot;0\&quot;,\&quot;p\&quot;:\&quot;13244\&quot;,\&quot;head\&quot;:\&quot;Div 2\&quot;}&quot;},{&quot;id&quot;:13244,&quot;name&quot;:&quot;div&quot;,&quot;data&quot;:&quot;{\&quot;i\&quot;:\&quot;1\&quot;,\&quot;p\&quot;:\&quot;13236\&quot;,\&quot;head\&quot;:\&quot;Div 1\&quot;}&quot;},{&quot;id&quot;:13243,&quot;name&quot;:&quot;note&quot;,&quot;data&quot;:&quot;{\&quot;text\&quot;:\&quot;\\u003Cspan class=&#39;catalog-popup&#39; type=&#39;image&#39; eid=&#39;artwork:24&#39;\\u003E\\u003Cimg src=&#39;http://s3.amazonaws.com/sites-mel-catalog-staging.herokuapp.com/images/images/000/000/024/thumb/24_SCHLES_130741572.jpg?1422972269&#39;\\u003E\\u003C/span\\u003EThis is an image entry. \&quot;}&quot;},{&quot;id&quot;:13242,&quot;name&quot;:&quot;note&quot;,&quot;data&quot;:&quot;{\&quot;text\&quot;:\&quot;\\u003Cspan class=&#39;catalog-popup&#39; type=&#39;reference&#39; eid=&#39;place:3906&#39;\\u003EBaden-Baden, Germany\\u003C/span\\u003EThis is a catalog entry.\&quot;}&quot;},{&quot;id&quot;:13241,&quot;name&quot;:&quot;note&quot;,&quot;data&quot;:&quot;{\&quot;text\&quot;:\&quot;This is note text that I typed in myself. \&quot;}&quot;}]" />
 
       </div>
@@ -168,68 +167,12 @@
         $.each( page_divs, function( i, divs ) {
             $.each( divs, function( j, div ) {
                 if( div['id'] && div['heading'] ) {
-                    $('<h3>' + div['heading'] + '</h3>').insertBefore($(".reading-div span[data-annotation-id~='" + div['id'] + "']").filter(":first"));
+                    $('<h3>' + div['heading'] + '</h3>').insertBefore($(".textonly-div span[data-annotation-id~='" + div['id'] + "']").filter(":first"));
                 }
             });
-        });
-
-        // convert to real JSON
-        var images = JSON.parse( '{&quot;1&quot;:[]}'.replace( /&quot;/g, "\"" ) );
-
-        // manually add the images to the page once it is loaded
-        $.each( images, function( page, images ) {
-           $.each( images, function( index, value ) {
-               $( thumb_html( value['aid'], value['guid'], value['thumbnail_url']) ).insertBefore( $( ".reading-div span[data-annotation-id~='" + value['aid'] + "']").filter( ":first" ) );
-            });
-        });
-
-        // ensure that the images don't overlap by setting the top of each image appropriatly...
-        var yoffset = 0;   // offset of initial image cos css attributes are not absolute
-        var padding = 3;   // padding of 3px between images
-        var height = 115;  // estimate because the images are not yet displayed
-
-        $( ".thumb-image" ).each( function( index ) {
-
-            var offset = $(this).offset( );
-
-            // save the absolute Y position of the first image...
-            if (index === 0) {
-                yoffset = offset.top;
-            } else {
-
-                // if the image is not placed correctly...
-                var newYOffset = ( height + padding ) * index;
-                if( ( offset.top - yoffset ) < newYOffset ) {
-                    // place the image..
-                    $( this ).css( { "top": newYOffset + "px" } );
-                    // and ensure the page is not too short...
-                    $( this ).parent().parent( ).css( { "min-height": ( newYOffset + height ) + "px" } );
-                }
-            }
-        });
-
-        // hover over functionality...
-        $( ".thumb-image" ).hover(function( ) {
-            var aid = $( this).attr( "id").replace( "thumb-", "" );
-            $( ".reading-div span[data-annotation-id~='" + aid + "']" ).addClass( "reading-highlight");
-        }, function( ) {
-            var aid = $( this).attr( "id").replace( "thumb-", "" );
-            $( ".reading-div span[data-annotation-id~='" + aid + "']" ).removeClass( "reading-highlight");
-        });
-
-        // thumbnail click handler; call if the handler is defined, ignore otherwise.
-        $( ".thumb-image" ).click( function( ) {
-            if( typeof thumbnail_clicked === "function" ) {
-                var guid = $(this).attr("guid");
-                thumbnail_clicked(guid);
-            }
         });
 
     });
-
-    function thumb_html( id, guid, url ) {
-       return( "<img class='thumb-image' id='thumb-" + id + "' guid='" + guid + "' src='" + url + "'>" );
-    }
 
 </script>
 
