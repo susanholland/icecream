@@ -132,17 +132,96 @@
    </div>
 </div>
 
-                 <div id="page-13267" class="sbs-page">
-      <div class="page-image col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            
+            <div id="reading-text" class="reading-text">
+      <div id="page-13264" class="reading-page">
+
+
+        <div class="thumb-image-div col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+        <div class="reading-div col-xs-8 col-sm-8 col-md-8 col-lg-8" id="div-1"><span data-annotation-id='13269' class='annotation humedit-person'>Lorem ipsum dolor sit amet</span>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <span data-annotation-id='13270' class='annotation humedit-person'>veniam, quis nostrud exercitation</span> ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/><span data-annotation-id='13271' class='annotation humedit-place'>Lorem ipsum dolor sit amet, c</span>onsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <span data-annotation-id='13272' class='annotation humedit-place'>commodo consequat. Duis aute irure </span>dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[{&quot;id&quot;:13272,&quot;name&quot;:&quot;place&quot;,&quot;data&quot;:&quot;{\&quot;ref\&quot;:\&quot;https://mel-catalog-staging.herokuapp.com/api/entries/place:3660\&quot;}&quot;},{&quot;id&quot;:13271,&quot;name&quot;:&quot;place&quot;,&quot;data&quot;:&quot;{\&quot;ref\&quot;:\&quot;http://google.com\&quot;}&quot;},{&quot;id&quot;:13270,&quot;name&quot;:&quot;person&quot;,&quot;data&quot;:&quot;{\&quot;ref\&quot;:\&quot;https://mel-catalog-staging.herokuapp.com/api/entries/person:9\&quot;}&quot;},{&quot;id&quot;:13269,&quot;name&quot;:&quot;person&quot;,&quot;data&quot;:&quot;{\&quot;ref\&quot;:\&quot;http://clayhillforge.com\&quot;}&quot;}]" />
+
       </div>
-      <div class="page col-xs-6 col-sm-6 col-md-6 col-lg-6" data-page-number="1">
-        <div class="diplomatic"><div class='line'><span data-annotation-id='13269' class='annotation humedit-person'>Lorem ipsum dolor sit amet</span>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <span data-annotation-id='13270' class='annotation humedit-person'>veniam, quis nostrud exercitation</span> ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-<div class='line'></div>
-<div class='line'><span data-annotation-id='13271' class='annotation humedit-place'>Lorem ipsum dolor sit amet, c</span>onsectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <span data-annotation-id='13272' class='annotation humedit-place'>commodo consequat. Duis aute irure </span>dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 </div>
-      </div>
-      <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[{&quot;id&quot;:13272,&quot;name&quot;:&quot;place&quot;,&quot;data&quot;:&quot;{\&quot;ref\&quot;:\&quot;https://mel-catalog-staging.herokuapp.com/api/entries/place:3660\&quot;}&quot;},{&quot;id&quot;:13271,&quot;name&quot;:&quot;place&quot;,&quot;data&quot;:&quot;{\&quot;ref\&quot;:\&quot;http://google.com\&quot;}&quot;},{&quot;id&quot;:13270,&quot;name&quot;:&quot;person&quot;,&quot;data&quot;:&quot;{\&quot;ref\&quot;:\&quot;https://mel-catalog-staging.herokuapp.com/api/entries/person:9\&quot;}&quot;},{&quot;id&quot;:13269,&quot;name&quot;:&quot;person&quot;,&quot;data&quot;:&quot;{\&quot;ref\&quot;:\&quot;http://clayhillforge.com\&quot;}&quot;}]" />
-    </div>
+
+<script type="text/javascript">
+
+    $(document).ready( function( ) {
+
+        // get the information for all our divs and images...
+
+
+        // convert to real JSON
+        var page_divs = JSON.parse( '{&quot;1&quot;:[]}'.replace( /&quot;/g, "\"" ) );
+
+        // manually add the divs to the page once it is loaded
+        $.each( page_divs, function( i, divs ) {
+            $.each( divs, function( j, div ) {
+                if( div['id'] && div['heading'] ) {
+                    $('<h3>' + div['heading'] + '</h3>').insertBefore($(".reading-div span[data-annotation-id~='" + div['id'] + "']").filter(":first"));
+                }
+            });
+        });
+
+        // convert to real JSON
+        var images = JSON.parse( '{&quot;1&quot;:[]}'.replace( /&quot;/g, "\"" ) );
+
+        // manually add the images to the page once it is loaded
+        $.each( images, function( page, images ) {
+           $.each( images, function( index, value ) {
+               $( thumb_html( value['aid'], value['guid'], value['thumbnail_url']) ).insertBefore( $( ".reading-div span[data-annotation-id~='" + value['aid'] + "']").filter( ":first" ) );
+            });
+        });
+
+        // ensure that the images don't overlap by setting the top of each image appropriatly...
+        var yoffset = 0;   // offset of initial image cos css attributes are not absolute
+        var padding = 3;   // padding of 3px between images
+        var height = 115;  // estimate because the images are not yet displayed
+
+        $( ".thumb-image" ).each( function( index ) {
+
+            var offset = $(this).offset( );
+
+            // save the absolute Y position of the first image...
+            if (index === 0) {
+                yoffset = offset.top;
+            } else {
+
+                // if the image is not placed correctly...
+                var newYOffset = ( height + padding ) * index;
+                if( ( offset.top - yoffset ) < newYOffset ) {
+                    // place the image..
+                    $( this ).css( { "top": newYOffset + "px" } );
+                    // and ensure the page is not too short...
+                    $( this ).parent().parent( ).css( { "min-height": ( newYOffset + height ) + "px" } );
+                }
+            }
+        });
+
+        // hover over functionality...
+        $( ".thumb-image" ).hover(function( ) {
+            var aid = $( this).attr( "id").replace( "thumb-", "" );
+            $( ".reading-div span[data-annotation-id~='" + aid + "']" ).addClass( "reading-highlight");
+        }, function( ) {
+            var aid = $( this).attr( "id").replace( "thumb-", "" );
+            $( ".reading-div span[data-annotation-id~='" + aid + "']" ).removeClass( "reading-highlight");
+        });
+
+        // thumbnail click handler; call if the handler is defined, ignore otherwise.
+        $( ".thumb-image" ).click( function( ) {
+            if( typeof thumbnail_clicked === "function" ) {
+                var guid = $(this).attr("guid");
+                thumbnail_clicked(guid);
+            }
+        });
+
+    });
+
+    function thumb_html( id, guid, url ) {
+       return( "<img class='thumb-image' id='thumb-" + id + "' guid='" + guid + "' src='" + url + "'>" );
+    }
+
+</script>
 
 
       </div>
