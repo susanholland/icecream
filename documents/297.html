@@ -78,6 +78,7 @@
               <label class="compare-label">Compare with</label>
               <select id="comparands" onchange="location = this.options[this.selectedIndex].value;">
                  <option value="" disabled selected>Select document</option>
+                  <option value='/eeee/comparisons/43.html'>billybudd2</option>
               </select>
            </div>
       </div>
@@ -233,7 +234,7 @@
 
    $(document).ready(function() {
       var seaDragonAssetsPath = "https://s3.amazonaws.com/assets-juxtaeditions/assets/"
-        var externalContentPath = "/eh/catalog/"
+        var externalContentPath = "/eeee/catalog/"
       var publishedView = new HumEditViewer.PublishedView({
             el: $("#hum-edit-published"),
             seaDragonAssetsPath: seaDragonAssetsPath,
