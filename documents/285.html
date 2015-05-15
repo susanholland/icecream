@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>no text test</title>
+      <title>test</title>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <meta name="viewport" content="width=device-width">
@@ -50,7 +50,7 @@
 </div>		 
 
 
-      <h1 class="doc-title">no text test</h1>
+      <h1 class="doc-title">test</h1>
       	  <style type="text/css">
 			.humedit-corr { border-bottom: 1px dashed #999; }
 			.humedit-del { color: gray; text-decoration:line-through }
@@ -105,8 +105,8 @@
                <div class="tab-pane active" id="title">
    <table class="header block">
          <tr>
-            <td class = "header name">Title:</td>
-            <td>no text test</td>
+            <td class = "header name">Main Title:</td>
+            <td>The shortest TEI Document Imaginable</td>
          </tr>
    
       <tr class="sep"><td colspan="2"/></tr>
@@ -132,96 +132,25 @@
    </div>
 </div>
 
-            
-            <div id="reading-text" class="reading-text">
-      <div id="page-14233" class="reading-page">
-
-
-        <div class="thumb-image-div col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-        <div class="reading-div col-xs-8 col-sm-8 col-md-8 col-lg-8" id="div-1"><a name='14236'></a><span data-annotation-id='14236' class='annotation humedit-pb'></span></div>
-        <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
-
+                 <div id="page-13809" class="sbs-page">
+      <div class="page-image col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="dragon" id="page-image-c1a0666d-8180-497a-b8b3-a18224866664"
+                 data-tile-source-url="/hl/openseadragon/c1a0666d-8180-497a-b8b3-a18224866664.json"></div>
       </div>
+      <div class="page col-xs-6 col-sm-6 col-md-6 col-lg-6" data-page-number="1">
+        <div class="diplomatic"><div class='line'>This is about the shortest TEI document imaginable.</div>
+<div class='line'></div>
+<div class='line'>Page 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+<div class='line'></div>
+<div class='line'>Page 2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+<div class='line'></div>
+<div class='line'>Page 3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+<div class='line'></div>
+<div class='line'></div>
 </div>
-
-<script type="text/javascript">
-
-    $(document).ready( function( ) {
-
-        // get the information for all our divs and images...
-
-
-        // convert to real JSON
-        var page_divs = JSON.parse( '{&quot;1&quot;:[]}'.replace( /&quot;/g, "\"" ) );
-
-        // manually add the divs to the page once it is loaded
-        $.each( page_divs, function( i, divs ) {
-            $.each( divs, function( j, div ) {
-                if( div['id'] && div['heading'] ) {
-                    $('<h3>' + div['heading'] + '</h3>').insertBefore($(".reading-div span[data-annotation-id~='" + div['id'] + "']").filter(":first"));
-                }
-            });
-        });
-
-        // convert to real JSON
-        var images = JSON.parse( '{&quot;1&quot;:[{&quot;aid&quot;:14236,&quot;guid&quot;:&quot;5a2eeadf-07a1-4b7d-ad86-203b5329928e&quot;,&quot;thumbnail_url&quot;:&quot;https://dave-uploads-juxtaeditions.s3.amazonaws.com/zoom_data5a2eeadf-07a1-4b7d-ad86-203b5329928e35_AC942695-98EC-46F1-AC49-0127C5620174-3.png&quot;}]}'.replace( /&quot;/g, "\"" ) );
-
-        // manually add the images to the page once it is loaded
-        $.each( images, function( page, images ) {
-           $.each( images, function( index, value ) {
-               $( thumb_html( value['aid'], value['guid'], value['thumbnail_url']) ).insertBefore( $( ".reading-div span[data-annotation-id~='" + value['aid'] + "']").filter( ":first" ) );
-            });
-        });
-
-        // ensure that the images don't overlap by setting the top of each image appropriatly...
-        var yoffset = 0;   // offset of initial image cos css attributes are not absolute
-        var padding = 3;   // padding of 3px between images
-        var height = 115;  // estimate because the images are not yet displayed
-
-        $( ".thumb-image" ).each( function( index ) {
-
-            var offset = $(this).offset( );
-
-            // save the absolute Y position of the first image...
-            if (index === 0) {
-                yoffset = offset.top;
-            } else {
-
-                // if the image is not placed correctly...
-                var newYOffset = ( height + padding ) * index;
-                if( ( offset.top - yoffset ) < newYOffset ) {
-                    // place the image..
-                    $( this ).css( { "top": newYOffset + "px" } );
-                    // and ensure the page is not too short...
-                    $( this ).parent().parent( ).css( { "min-height": ( newYOffset + height ) + "px" } );
-                }
-            }
-        });
-
-        // hover over functionality...
-        $( ".thumb-image" ).hover(function( ) {
-            var aid = $( this).attr( "id").replace( "thumb-", "" );
-            $( ".reading-div span[data-annotation-id~='" + aid + "']" ).addClass( "reading-highlight");
-        }, function( ) {
-            var aid = $( this).attr( "id").replace( "thumb-", "" );
-            $( ".reading-div span[data-annotation-id~='" + aid + "']" ).removeClass( "reading-highlight");
-        });
-
-        // thumbnail click handler; call if the handler is defined, ignore otherwise.
-        $( ".thumb-image" ).click( function( ) {
-            if( typeof thumbnail_clicked === "function" ) {
-                var guid = $(this).attr("guid");
-                thumbnail_clicked(guid);
-            }
-        });
-
-    });
-
-    function thumb_html( id, guid, url ) {
-       return( "<img class='thumb-image' id='thumb-" + id + "' guid='" + guid + "' src='" + url + "'>" );
-    }
-
-</script>
+      </div>
+      <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
+    </div>
 
 
       </div>
@@ -233,7 +162,7 @@
 
    $(document).ready(function() {
       var seaDragonAssetsPath = "https://s3.amazonaws.com/assets-juxtaeditions/assets/"
-        var externalContentPath = "/tk/catalog/"
+        var externalContentPath = "/hl/catalog/"
       var publishedView = new HumEditViewer.PublishedView({
             el: $("#hum-edit-published"),
             seaDragonAssetsPath: seaDragonAssetsPath,
