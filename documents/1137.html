@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>badHeader</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="viewport" content="width=device-width">
+      <meta http-equiv="cache-control" content="max-age=0" />
+      <meta http-equiv="cache-control" content="no-cache" />
+      <meta http-equiv="expires" content="0" />
+      <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+      <meta http-equiv="pragma" content="no-cache" />
+      
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+      <link rel="stylesheet" href="../css/common.css">
+      <link rel="stylesheet" href="../css/hum_edit_viewer.css">
+
+      <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+      <script src="../js/hum_edit_viewer.js"></script>
+
+   </head>
+   <body>
+      <div class="page-header">
+
+  <div align="center" id="headerimg">
+    <a href="/index.html"><img alt="Melville Electronic Library - a critical archive" border="0" height="96" src="../images/header_top.jpg" width="1024"/></a>
+  </div>
+
+  <div align="center" id="headernav">
+    <a href="/index.html">HOME</a> |
+    <a href="/editions.html">EDITIONS</a> |
+    <a href="/manuscripts.html">MANUSCRIPTS</a> |
+    <a href="/sources.html">SOURCES</a> |
+    <a href="/gallery.html">GALLERY</a> |
+    <a href="/adaptation.html">ADAPTATION</a> |
+    <a href="/biography.html">BIOGRAPHY</a> |
+    <a href="/criticism.html">CRITICISM</a> |
+    <a href="/about_us.html">ABOUT US</a> |
+    <a href="/mel_camp.html">MELCamp</a>
+  </div>
+
+  <div id="header_nav_bg">&nbsp;
+  </div>
+
+</div>		 
+
+
+      <h1 class="doc-title">badHeader</h1>
+      	  <style type="text/css">
+			.humedit-add { font-size: 90%; font-style: italic; }
+			.humedit-corr { border-bottom: 1px dashed #999; }
+			.humedit-del { color: gray; text-decoration:line-through }
+			.humedit-gap {  }
+			.humedit-handwriting {  }
+			.humedit-orig { border-bottom: 1px dashed #999; }
+			.humedit-reg { border-bottom: 1px dashed #999; }
+			.humedit-sic { border-bottom: 1px dashed #999; }
+			.humedit-unclear { color: gray; }
+			.humedit-hi_bold { font-weight:bold; }
+			.humedit-hi_italic { font-style: italic; }
+			.humedit-ref { color: blue; border-bottom: 1px dashed; }
+			.humedit-hi_underline { text-decoration: underline; }
+			.humedit-note { border-bottom: 1px dashed; }
+			.humedit-place { color: green; }
+			.humedit-person { color: blue; }
+	  </style>
+
+
+<div id="hum-edit-published">
+   <div class="panel panel-default">   
+      <div class="toolbar">
+         <div class="btn-group right $HIDDEN">
+              <label class="compare-label">Compare with</label>
+              <select id="comparands" onchange="location = this.options[this.selectedIndex].value;">
+                 <option value="" disabled selected>Select document</option>
+              </select>
+           </div>
+      </div>
+      <div id="document-viewport" class="panel-body">
+         
+          <div class="col-sm-12 panel-group" id="accordion">
+   <div class="tei-header-editor panel panel-default" id="published-header">
+      <div class="panel-heading collapsed" data-toggle="collapse" href="#collapse-form">
+         <div class="panel-title">
+            <a class="panel-heading-link" data-parent="#accordion">
+               <span class="glyphicon glyphicon-chevron-right header-chevron-icon"> </span> Document Header
+            </a>
+         </div>
+      </div>
+      
+      <div id="collapse-form" class="panel-collapse collapse tei-header-content">
+         <div class="panel-body">
+            <ul class="nav nav-tabs" role="tablist">
+               <li class="active"><a href="#title" role="tab" data-toggle="tab">Title Statement</a></li>
+               <li><a href="#publication" role="tab" data-toggle="tab">Publication Statement</a></li>
+               <li><a href="#source" role="tab" data-toggle="tab">Source Description</a></li>
+            </ul>
+            
+            <div class="tab-content"> 
+               <div class="tab-pane active" id="title">
+   <table class="header block">
+         <tr>
+            <td class = "header name">Main Title:</td>
+            <td>Collectio Dionysio-Hadriana (Cochlaeus ed.)</td>
+         </tr>
+   
+      <tr class="sep"><td colspan="2"/></tr>
+   
+   
+      <tr class="sep"><td colspan="2"/></tr>
+         <tr>
+            <td class="header name">Responsibility:</td>
+            <td>Transcribed by</td>
+         </tr>
+         <tr>
+            <td class="header name">Name:</td>
+            <td>Casey Carmichael</td>
+         </tr>
+         <tr>
+            <td class="header name">Responsibility:</td>
+            <td>Encoding initiated by</td>
+         </tr>
+         <tr>
+            <td class="header name">Name:</td>
+            <td>Linda Cantara Abbott</td>
+         </tr>
+         <tr>
+            <td class="header name">Responsibility:</td>
+            <td>Encoding continued by</td>
+         </tr>
+         <tr>
+            <td class="header name">Name:</td>
+            <td>Janette Whitford</td>
+         </tr>
+         <tr>
+            <td class="header name">Responsibility:</td>
+            <td>by</td>
+         </tr>
+         <tr>
+            <td class="header name">Name:</td>
+            <td>Meredith Gaffield</td>
+         </tr>
+   </table>
+</div>
+               <div class="tab-pane" id="publication">
+   <table class="header block">
+            <tr>
+               <td class = "header name">Publisher:</td>
+               <td>Carolingian Canon Law Project</td><td/><td/>
+            </tr>
+            <tr>
+               <td class = "header name">Date:</td>
+               <td>June 19, 2011
+            </tr>
+   
+      
+   </table>
+</div>
+               <div class="tab-pane" id="source">
+   
+      
+         <p class="header-title">Manuscript Data</p>
+         <table class="header block">
+               <tr>
+                  <td class = "header name">Repository:</td>
+                  <td>University of Kentucky, Margaret I. King Library, Special Collections</td>
+               </tr>
+            
+               <tr>
+                  <td class = "header name">Identifier:</td>
+                  <td>KBR197.6 .C36 1525</td>
+               </tr>
+            
+            
+            
+            
+            
+         </table>
+</div>
+            </div>
+            
+         </div>
+     </div>
+    
+   </div>
+</div>
+
+                 <div id="page-116010" class="sbs-page">
+      <div class="page-image col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      </div>
+      <div class="page col-xs-6 col-sm-6 col-md-6 col-lg-6" data-page-number="1">
+        <div class="diplomatic"><div class='line'>INCIPIUNT REGULAE ANCYRANI CONCILII. Istae regulae priores quidem sunt Nicaenis: sed ideo Nicaenae prius scriptae sunt, propter authoritatem eiusdem magni, sanctique concilii congregati apud Niceam.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. I.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De presbyteris, qui immolauerunt tempore persecutionis.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+</div>
+      </div>
+      <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
+    </div>
+    <div id="page-116011" class="sbs-page">
+      <div class="page-image col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      </div>
+      <div class="page col-xs-6 col-sm-6 col-md-6 col-lg-6" data-page-number="2">
+        <div class="diplomatic"><div class='line'> I Presbyteros immolantes, et iterum luctamen adeuntes: si hoc non per illusionem aliquam, sed ex ueritate fecerint, ut iterum teneri uiderentur, aut tormentis subiici, quo facinus pati uiderentur inuiti. Hos ergo placuit honorem quidem sedis retinere, offerre autem illis et sermonem ad populum facere, aut aliquibus sacerdotalibus officiis fungi non liceat.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. II.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De diaconis, qui immolauerunt.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> II Diaconi similiter, qui immolauerunt, honorem quidem habeant: cessent uero ab omni sacro ministerio, siue a pane, siue a calice offerendo, uel praedicando. Quod si quidam episcoporum conscii sunt laboris eorum, et humilitatis, et mansuetudinis, et uoluerint eis aliquid amplius tribuere uel adimere, penes ipsos erit potestas.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. III.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui ex fuga comprehensi sunt, et per uim pagani ritus aliquid pertulerunt.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> III Qui fugientes compraehensi sunt, uel a domesticis traditi, uel ademptis facultatibus sustinuere tormenta, aut in custodiam trusi, proclamauerunt se Christianos esse, et eo usque astricti sunt, ut manus eorum compraehendentes uiolenter attraherent, et funestis sacrificiis admouerent, aut aliquid polluti cibi per necessitatem sumere cogerentur, confitentes iugiter se Christianos esse, et luctum rei, quae contigit, incessabiliter ostendentes omni deiectione, et habitu, et humilitate uitae: nos, uelut extra delictum constitutos, a communionis gratia non uetamus. Si uero prohibiti sunt ab aliquibus, propter ampliorem cautelam, uel propter quorundam ignorantiam: statim recipiantur. Hoc autem similiter de clericis, et de laicis caeteris obseruari conueniet. Perquisitum est autem et illud, si possunt etiam laici, qui in has necessitatis angustias incideruut, ad clericatus ordinem promoueri? placuit ergo et hos, tanquam qui nihil peccauerunt, si et praecendens eorum uita probabilis sit, ad hoc officium prouehi.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. IIII.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui diuersis causis gentilitatis ritus aliquid peregerunt.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> IIII De his, qui sacrificare coacti sunt, insuper et coenauerunt in idolio. Quicunque eorum, cum ducerentur, laetiore habitu fuerunt, et uestimentis preciosioribus usi sunt, et praeparatae coenae indifferenter participes extiterunt: placuit eos inter audientes uno anno constitui, succumbere uero tribus annis, in oratione autem communicare biennio, et tunc ad perfectionis gratiam peruenire. Quotquot autem ascen</div>
+</div>
+      </div>
+      <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
+    </div>
+    <div id="page-116012" class="sbs-page">
+      <div class="page-image col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      </div>
+      <div class="page col-xs-6 col-sm-6 col-md-6 col-lg-6" data-page-number="3">
+        <div class="diplomatic"><div class='line'> derunt templa ueste lugubri, et recumbentes per omne tempus fleuere discubitus, si compleuerunt poenitentiam triennii temporis, sine oblatione suscipiantur. Si autem non manducauerunt, biennio subiecti poenitentiae, tertio anno sine oblatione communicent: ut perfectionem quadriennio consequantur. Penes autem episcopos erit potestas, modum conuersionis eorum probantes, uel humanius erga eos agere, uel amplius tempus addicere. Ante omnia uero praecedens eorum uita et posterior inquiratur, et ita eis impertiatur humanitas.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. V.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui timore ritus gentilium peregeruut.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> V De his, qui minis tantum cessere poenarum, aut priuatione facultatum territi, aut demigratione, sacrificauerunt: et hactenus poenitudinis negligentes, neque conuersi, nunc huius concilii tempore semet obtulerunt, conuersionis suae consilia capientes, placuit usque ad magnum diem eos inter audientes suscipi, et post magnum diem triennio poenitentiam agere, et postmodum duobus annis sine oblatione communicare. Et tunc demum, sex annis completis, ad perfectionis gratiam peruenire. Si uero quidem ante hanc synodum suscepti sunt ad poenitentiam, ex illo tempore initium eis sexennii computetur. Si quod autem periculum, uel mortis expectatio, aut ex infirmitate, aut ex aliqua occasione contigerit: his sub definitione statuta communio non negetur.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. VI.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui in locis idolorum manducauerunt.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> VI De his, qui festis diebus gentilium in remotis eorum locis conuiuia celebrarunt, cibosque proprios deferentes ibidem comederunt, placuit post poenitentiam biennii eos suscipi, utrum uero cum oblatione singuli episcoporum probantes uitam eorum, et singulos actus examinent.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. VII.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui frequenter idolis immolauerunt.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> VII Hi, qui secundo, et tertio sacrificauerunt coacti, quatuor annis poenitentiae subiiciantur: duobus autem aliis sine oblatione communicent, et septimo anno perfecte recipiantur.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. VIII.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui et aliis sacrificandi causas attulerunt.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+</div>
+      </div>
+      <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
+    </div>
+    <div id="page-116013" class="sbs-page">
+      <div class="page-image col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      </div>
+      <div class="page col-xs-6 col-sm-6 col-md-6 col-lg-6" data-page-number="4">
+        <div class="diplomatic"><div class='line'> VIII Quotquot autem non solum ipsi deuiauerunt, sed etiam insurrexerunt, et compulerunt fratres, et causas praebuerunt ut cogerentur: hi per triennium quidem locum inter audientes accipiant, per aliud uero sexennium poenitentiae subiiciantur acriori, et alio anno communionem sine oblatione percipiant, ut perfectionem, expleto decennio, consequantur. Inter haec autem et eorum uita pensanda est.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. IX.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De diaconis, qui tempore ordinationis de nuptiis attestati sunt.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> IX Diaconi, quicunque ordinantur, si in ipsa ordinatione protestati sunt, et dixerunt, uelle se coniugio copulari, quia sic manere non possunt: hi si postmodum uxores duxerint, in ministerio maneant, propterea, quod eis episcopus licentiam dederit. Quicunque sane tacuerunt, et susceperunt manus impositionem, professi continentiam, et postea nuptiis obligati sunt, a ministerio cessare debebunt.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. X.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De desponsatis puellis, et ab aliis corruptis.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> X Desponsatas puellas, et post ab aliis raptas, placuit erui, et eis reddi, quibus ante fuerant desponsatae, etiam si eis a raptoribus uis illata constiterit.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. XI.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui cum essent catechumeni, idolis immolauerunt.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> XI Eos: qui ante baptisma sacrificauerunt idolis, et postea baptisma consecuti sunt: placuit ad ordinem prouehi, eo quod probentur abluti.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. XII.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Quod non oporteat corepiscopos clericos ordinare, nisi in agris, et uillulis.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> XII Corepiscopis non licere presbyteros, aut diaconos ordinare, sed nec presbyteris ciuitatis, sine praecepto episcopi, uel literis, in unaquaque parochia.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. XIII.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui esum carnium in clero constituti diffugiunt.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> XIII Hi, qui in clero sunt presbyteri, et diaconi, et a carnibus abstinent: placuit eas quidem contigere, et ita si uoluerint, continere. Quod si in tantum eas abominantur, ut nec holera, quae cum eis coquuntur, existiment comedenda, tanquam non consentientes regulae, ab ordine cessare debebunt.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. XIIII.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De rebus ecclesiasticis eo tempore distractis, quo ipsae ecclesiae uiduantur episcopis</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> XIIII De his, qnae pertinent ad ecclesiam, quaecunque, cum non esset episcopus, presbyteri uendiderunt: placuit, rescisso contractu, ad iura ecclesiastica reuocari. In iudicio autem erit episcopi, si pretium debeat recipi, necne. Quia plerunque rerum distractarum reditus ampliorem summam pro pretio dato reddiderit.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. XV.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui fornicantur inrationabiliter, id est qui miscentur pecoribus, aut cum masculis polluuntur.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> XV De his, qui inrationabiliter uersati sunt, siue uersantur, quotquot ante uicesimum annum tale crimen commiserint, quindecim annis exactis in poenitentia, communionem mereantur orationum: deinde quinquennio in hac communione durantes, tunc demum oblationis sacramenta contingant. Discutiatur autem et uita eorum, qualis tempore poenitudinis extiterit, et ita misericordiam consequantur. Quod si inexplebiliter his haesere criminibus, ad agendam poenitentiam prolixius tempus insumant. Quotquot autem peracta .xx. annorum aetate, et uxores habentes, hoc peccato prolapsi sunt .xxv. annis poenitudinem gerentes in communionem suscipiantur orationum: in qua quinquennio perdurantes, tunc demum oblationis sacramenta percipiant. Quod si et uxores habentes, et transcendentes quinquagesimum annum aetatis, ita deliquerint: ad exitum uitae communionis gratiam consequantur.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. XVI.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui in pecudes, uel in masculos, aut olim polluti sunt, aut hactenus hoc uitio tabescunt.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> XVI Eos, qui inrationabiliter uixerunt, et lepra iniusti criminis alios polluerunt, praecepit sancta synodus inter eos orare, qui spiritu periclitantur immundo.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. XVII.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui ad episcopatum promoti sunt, nec recepti.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> XVII Si qni episcopi ordinati sunt, nec recepti ab illa parochia, in qua fuerant denominati, uoluerintque alias occupare parochias, et uim presulibus earum inferre seditiones aduersus eos excitando: hos abiici placuit. Quod si uoluerint in presbyterii ordine, ubi prius fuerant, ut presbyterri esidere: non abiiciantur propria dignitate. Si autem seditiones </div>
+</div>
+      </div>
+      <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
+    </div>
+    <div id="page-116014" class="sbs-page">
+      <div class="page-image col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      </div>
+      <div class="page col-xs-6 col-sm-6 col-md-6 col-lg-6" data-page-number="5">
+        <div class="diplomatic"><div class='line'>commouent ibidem constitutis episcopis, presbyterii quoque honor talibus auferatur, fiantque damnatione notabiles.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. XVIII.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui uirginitatem professi sunt, et de his, quae sub sororis habitu cum aliquibus commorantur.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> XVIII Quotquot uirginitatem promittentes irritam faciunt sponsionem: inter bigamos censeantur. Uirgines autem, quae conueniunt cum aliquibus, tanquam sorores, habitare prohibemus.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. XIX.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui adulteras habent uxores, uel si ipsi adulteri comprobantur.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> XIX Si cuius uxor adulterata fuerit, uel si ipse adulterium commiserit, septem annorum poenitentia oportet eum perfectionem consequi secundum pristinos gradus.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. XX.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui partus suos ex fornicatione diuersis modis interimunt.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> XX De mulieribus, quae fornicantur, et partus suos necant, uel quae agunt secum, ut utero conceptos excutiant: antiqua quidem definitio usque ad exitum uitae eas ab ecclesia remouet, humanius autem nunc definimus, ut eis decem annorum tempus, secundum prefixos gradus poenitentiae largiamur.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. XXI.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De homicidis.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> XXI Qui uoluntarie homicidium fecerint, poenitentiae quidem iugiter se submittant: perfectionem uero circa uitae exitum consequantur.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. XXII.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui non sponte homicidium commiserunt.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> XXII De homicidiis non sponte commissis prior quidem definitio post septennem poenitentiam perfectionem consequi praecipit: secunda uero quinquennii tempus explere, modus autem huius poenitentiae episcoporum sit arbitrio, ut secundum conuersationem poenitentium possint et extendere tardantibus, et minuere studiose festinantibus.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. XXIII.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui diuinationes expetunt.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> XXIII Qui diuinationes expetunt, et morem gentilium subsequuntur, aut in domos suas huiuscemodi homines introducunt, exquirendi aliquid arte malefica, aut expiandi causa, sub regula quinquen</div>
+</div>
+      </div>
+      <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
+    </div>
+    <div id="page-116015" class="sbs-page">
+      <div class="page-image col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      </div>
+      <div class="page col-xs-6 col-sm-6 col-md-6 col-lg-6" data-page-number="6">
+        <div class="diplomatic"><div class='line'> nii iaceant, secundum gradus poenitentiae definitos.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> Cap. XXIIII.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> De his, qui uirginum corruptionibus conscii sunt.</div>
+<div class='line'></div>
+<div class='line'></div>
+<div class='line'> XXIIII Quidam sponsam habens, sororem eius uiolauit, et grauidam reddidit: postmodum desponsatam sibi duxit uxorem, illa uero, quae corrupta est, laqueo se peremit. Hi, qui fuerunt conscii, post decennem satisfactionem iussi sunt suscipi, secundum gradus poenitentiae constitutos.</div>
+<div class='line'></div>
+<div class='line'>EXPLICIUNT CANONES CONCILII ANCYRANI.</div>
+<div class='line'></div>
+<div class='line'></div>
+</div>
+      </div>
+      <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
+    </div>
+
+
+      </div>
+   </div>
+   <input id="tag_templatesJSON" name="tag_templatesJSON" type="hidden" value="{&quot;add&quot;:{&quot;id&quot;:181,&quot;xml_tag&quot;:&quot;&quot;,&quot;name&quot;:&quot;add&quot;,&quot;zero_length&quot;:false,&quot;display_ref&quot;:false,&quot;referenced_target&quot;:false,&quot;element_body_field&quot;:null,&quot;siglum&quot;:&quot;&quot;,&quot;tag_set&quot;:&quot;Transcription&quot;,&quot;display_name&quot;:&quot;Addition&quot;,&quot;description&quot;:&quot;&quot;,&quot;editor_css&quot;:&quot;color: blue;&quot;,&quot;display_css&quot;:&quot;font-size: 90%; font-style: italic;&quot;,&quot;fields&quot;:[{&quot;id&quot;:177,&quot;name&quot;:&quot;place&quot;,&quot;display_name&quot;:&quot;Placement&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;term&quot;,&quot;vocab_id&quot;:39,&quot;populate_with_selected_text&quot;:false},{&quot;id&quot;:178,&quot;name&quot;:&quot;cert&quot;,&quot;display_name&quot;:&quot;Certainty&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;term&quot;,&quot;vocab_id&quot;:36,&quot;populate_with_selected_text&quot;:null},{&quot;id&quot;:179,&quot;name&quot;:&quot;hand&quot;,&quot;display_name&quot;:&quot;Hand&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;text&quot;,&quot;vocab_id&quot;:null,&quot;populate_with_selected_text&quot;:null}],&quot;fixed_attributes&quot;:[]},&quot;corr&quot;:{&quot;id&quot;:182,&quot;xml_tag&quot;:&quot;&quot;,&quot;name&quot;:&quot;corr&quot;,&quot;zero_length&quot;:false,&quot;display_ref&quot;:false,&quot;referenced_target&quot;:false,&quot;element_body_field&quot;:null,&quot;siglum&quot;:&quot;&quot;,&quot;tag_set&quot;:&quot;Transcription&quot;,&quot;display_name&quot;:&quot;Correction&quot;,&quot;description&quot;:&quot;&quot;,&quot;editor_css&quot;:&quot;border-bottom: 1px dashed #999;&quot;,&quot;display_css&quot;:&quot;border-bottom: 1px dashed #999;&quot;,&quot;fields&quot;:[{&quot;id&quot;:180,&quot;name&quot;:&quot;originalText&quot;,&quot;display_name&quot;:&quot;Original Text&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;text&quot;,&quot;vocab_id&quot;:null,&quot;populate_with_selected_text&quot;:true}],&quot;fixed_attributes&quot;:[]},&quot;del&quot;:{&quot;id&quot;:183,&quot;xml_tag&quot;:null,&quot;name&quot;:&quot;del&quot;,&quot;zero_length&quot;:null,&quot;display_ref&quot;:false,&quot;referenced_target&quot;:false,&quot;element_body_field&quot;:null,&quot;siglum&quot;:null,&quot;tag_set&quot;:&quot;Transcription&quot;,&quot;display_name&quot;:&quot;Deletion&quot;,&quot;description&quot;:&quot;&quot;,&quot;editor_css&quot;:&quot;color: red;&quot;,&quot;display_css&quot;:&quot;color: gray; text-decoration:line-through&quot;,&quot;fields&quot;:[{&quot;id&quot;:181,&quot;name&quot;:&quot;type&quot;,&quot;display_name&quot;:&quot;Type&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;term&quot;,&quot;vocab_id&quot;:38,&quot;populate_with_selected_text&quot;:false},{&quot;id&quot;:183,&quot;name&quot;:&quot;hand&quot;,&quot;display_name&quot;:&quot;Hand&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;text&quot;,&quot;vocab_id&quot;:null,&quot;populate_with_selected_text&quot;:null},{&quot;id&quot;:182,&quot;name&quot;:&quot;cert&quot;,&quot;display_name&quot;:&quot;Certainty&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;term&quot;,&quot;vocab_id&quot;:36,&quot;populate_with_selected_text&quot;:false}],&quot;fixed_attributes&quot;:[]},&quot;gap&quot;:{&quot;id&quot;:184,&quot;xml_tag&quot;:null,&quot;name&quot;:&quot;gap&quot;,&quot;zero_length&quot;:true,&quot;display_ref&quot;:false,&quot;referenced_target&quot;:false,&quot;element_body_field&quot;:null,&quot;siglum&quot;:&quot;†&quot;,&quot;tag_set&quot;:&quot;Transcription&quot;,&quot;display_name&quot;:&quot;Gap&quot;,&quot;description&quot;:&quot;&quot;,&quot;editor_css&quot;:&quot;&quot;,&quot;display_css&quot;:&quot;&quot;,&quot;fields&quot;:[{&quot;id&quot;:184,&quot;name&quot;:&quot;reason&quot;,&quot;display_name&quot;:&quot;Reason&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;text&quot;,&quot;vocab_id&quot;:null,&quot;populate_with_selected_text&quot;:null},{&quot;id&quot;:185,&quot;name&quot;:&quot;hand&quot;,&quot;display_name&quot;:&quot;Hand&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;text&quot;,&quot;vocab_id&quot;:null,&quot;populate_with_selected_text&quot;:null},{&quot;id&quot;:186,&quot;name&quot;:&quot;agent&quot;,&quot;display_name&quot;:&quot;Agent&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;text&quot;,&quot;vocab_id&quot;:null,&quot;populate_with_selected_text&quot;:null}],&quot;fixed_attributes&quot;:[]},&quot;handwriting&quot;:{&quot;id&quot;:185,&quot;xml_tag&quot;:null,&quot;name&quot;:&quot;handwriting&quot;,&quot;zero_length&quot;:null,&quot;display_ref&quot;:false,&quot;referenced_target&quot;:false,&quot;element_body_field&quot;:null,&quot;siglum&quot;:null,&quot;tag_set&quot;:&quot;Transcription&quot;,&quot;display_name&quot;:&quot;Handwriting&quot;,&quot;description&quot;:&quot;&quot;,&quot;editor_css&quot;:&quot;&quot;,&quot;display_css&quot;:&quot;&quot;,&quot;fields&quot;:[],&quot;fixed_attributes&quot;:[]},&quot;orig&quot;:{&quot;id&quot;:186,&quot;xml_tag&quot;:null,&quot;name&quot;:&quot;orig&quot;,&quot;zero_length&quot;:null,&quot;display_ref&quot;:false,&quot;referenced_target&quot;:false,&quot;element_body_field&quot;:null,&quot;siglum&quot;:null,&quot;tag_set&quot;:&quot;Transcription&quot;,&quot;display_name&quot;:&quot;Original&quot;,&quot;description&quot;:&quot;&quot;,&quot;editor_css&quot;:&quot;border-bottom: 1px dashed #999;&quot;,&quot;display_css&quot;:&quot;border-bottom: 1px dashed #999;&quot;,&quot;fields&quot;:[{&quot;id&quot;:187,&quot;name&quot;:&quot;regularizedText&quot;,&quot;display_name&quot;:&quot;Regularized Text&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;text&quot;,&quot;vocab_id&quot;:null,&quot;populate_with_selected_text&quot;:null}],&quot;fixed_attributes&quot;:[]},&quot;reg&quot;:{&quot;id&quot;:187,&quot;xml_tag&quot;:null,&quot;name&quot;:&quot;reg&quot;,&quot;zero_length&quot;:null,&quot;display_ref&quot;:false,&quot;referenced_target&quot;:false,&quot;element_body_field&quot;:null,&quot;siglum&quot;:null,&quot;tag_set&quot;:&quot;Transcription&quot;,&quot;display_name&quot;:&quot;Regularized&quot;,&quot;description&quot;:&quot;&quot;,&quot;editor_css&quot;:&quot;border-bottom: 1px dashed #999;&quot;,&quot;display_css&quot;:&quot;border-bottom: 1px dashed #999;&quot;,&quot;fields&quot;:[{&quot;id&quot;:188,&quot;name&quot;:&quot;originalText&quot;,&quot;display_name&quot;:&quot;Original Text&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;text&quot;,&quot;vocab_id&quot;:null,&quot;populate_with_selected_text&quot;:true}],&quot;fixed_attributes&quot;:[]},&quot;sic&quot;:{&quot;id&quot;:188,&quot;xml_tag&quot;:null,&quot;name&quot;:&quot;sic&quot;,&quot;zero_length&quot;:null,&quot;display_ref&quot;:false,&quot;referenced_target&quot;:false,&quot;element_body_field&quot;:null,&quot;siglum&quot;:null,&quot;tag_set&quot;:&quot;Transcription&quot;,&quot;display_name&quot;:&quot;Sic&quot;,&quot;description&quot;:&quot;&quot;,&quot;editor_css&quot;:&quot;border-bottom: 1px dashed #999;&quot;,&quot;display_css&quot;:&quot;border-bottom: 1px dashed #999;&quot;,&quot;fields&quot;:[{&quot;id&quot;:189,&quot;name&quot;:&quot;correctedText&quot;,&quot;display_name&quot;:&quot;Corrected Text&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;text&quot;,&quot;vocab_id&quot;:null,&quot;populate_with_selected_text&quot;:true}],&quot;fixed_attributes&quot;:[]},&quot;unclear&quot;:{&quot;id&quot;:189,&quot;xml_tag&quot;:null,&quot;name&quot;:&quot;unclear&quot;,&quot;zero_length&quot;:null,&quot;display_ref&quot;:false,&quot;referenced_target&quot;:false,&quot;element_body_field&quot;:null,&quot;siglum&quot;:null,&quot;tag_set&quot;:&quot;Transcription&quot;,&quot;display_name&quot;:&quot;Unclear&quot;,&quot;description&quot;:&quot;&quot;,&quot;editor_css&quot;:&quot;color: gray&quot;,&quot;display_css&quot;:&quot;color: gray;&quot;,&quot;fields&quot;:[{&quot;id&quot;:190,&quot;name&quot;:&quot;reason&quot;,&quot;display_name&quot;:&quot;Reason&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;text&quot;,&quot;vocab_id&quot;:null,&quot;populate_with_selected_text&quot;:null},{&quot;id&quot;:191,&quot;name&quot;:&quot;hand&quot;,&quot;display_name&quot;:&quot;Hand&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;text&quot;,&quot;vocab_id&quot;:null,&quot;populate_with_selected_text&quot;:null},{&quot;id&quot;:192,&quot;name&quot;:&quot;agent&quot;,&quot;display_name&quot;:&quot;Agent&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;text&quot;,&quot;vocab_id&quot;:37,&quot;populate_with_selected_text&quot;:false}],&quot;fixed_attributes&quot;:[]},&quot;hi_bold&quot;:{&quot;id&quot;:190,&quot;xml_tag&quot;:&quot;hi&quot;,&quot;name&quot;:&quot;hi_bold&quot;,&quot;zero_length&quot;:false,&quot;display_ref&quot;:false,&quot;referenced_target&quot;:false,&quot;element_body_field&quot;:null,&quot;siglum&quot;:&quot;&quot;,&quot;tag_set&quot;:&quot;General Use&quot;,&quot;display_name&quot;:&quot;Bold&quot;,&quot;description&quot;:&quot;&quot;,&quot;editor_css&quot;:&quot;font-weight:bold;&quot;,&quot;display_css&quot;:&quot;font-weight:bold;&quot;,&quot;fields&quot;:[],&quot;fixed_attributes&quot;:[{&quot;id&quot;:38,&quot;name&quot;:&quot;rend&quot;,&quot;value&quot;:&quot;bold&quot;}]},&quot;hi_italic&quot;:{&quot;id&quot;:191,&quot;xml_tag&quot;:&quot;hi&quot;,&quot;name&quot;:&quot;hi_italic&quot;,&quot;zero_length&quot;:null,&quot;display_ref&quot;:false,&quot;referenced_target&quot;:false,&quot;element_body_field&quot;:null,&quot;siglum&quot;:null,&quot;tag_set&quot;:&quot;General Use&quot;,&quot;display_name&quot;:&quot;Italic&quot;,&quot;description&quot;:&quot;&quot;,&quot;editor_css&quot;:&quot;font-style: italic;&quot;,&quot;display_css&quot;:&quot;font-style: italic;&quot;,&quot;fields&quot;:[],&quot;fixed_attributes&quot;:[{&quot;id&quot;:39,&quot;name&quot;:&quot;rend&quot;,&quot;value&quot;:&quot;italic&quot;}]},&quot;ref&quot;:{&quot;id&quot;:192,&quot;xml_tag&quot;:&quot;&quot;,&quot;name&quot;:&quot;ref&quot;,&quot;zero_length&quot;:null,&quot;display_ref&quot;:false,&quot;referenced_target&quot;:false,&quot;element_body_field&quot;:null,&quot;siglum&quot;:null,&quot;tag_set&quot;:&quot;General Use&quot;,&quot;display_name&quot;:&quot;Ref&quot;,&quot;description&quot;:&quot;&quot;,&quot;editor_css&quot;:&quot;color: blue; border-bottom: 1px dashed;&quot;,&quot;display_css&quot;:&quot;color: blue; border-bottom: 1px dashed;&quot;,&quot;fields&quot;:[{&quot;id&quot;:193,&quot;name&quot;:&quot;target&quot;,&quot;display_name&quot;:&quot;Target&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;text&quot;,&quot;vocab_id&quot;:null,&quot;populate_with_selected_text&quot;:null}],&quot;fixed_attributes&quot;:[]},&quot;hi_underline&quot;:{&quot;id&quot;:193,&quot;xml_tag&quot;:&quot;hi&quot;,&quot;name&quot;:&quot;hi_underline&quot;,&quot;zero_length&quot;:null,&quot;display_ref&quot;:false,&quot;referenced_target&quot;:false,&quot;element_body_field&quot;:null,&quot;siglum&quot;:null,&quot;tag_set&quot;:&quot;General Use&quot;,&quot;display_name&quot;:&quot;Underline&quot;,&quot;description&quot;:&quot;&quot;,&quot;editor_css&quot;:&quot;text-decoration: underline;&quot;,&quot;display_css&quot;:&quot;text-decoration: underline;&quot;,&quot;fields&quot;:[],&quot;fixed_attributes&quot;:[{&quot;id&quot;:40,&quot;name&quot;:&quot;rend&quot;,&quot;value&quot;:&quot;underline&quot;}]},&quot;note&quot;:{&quot;id&quot;:194,&quot;xml_tag&quot;:&quot;&quot;,&quot;name&quot;:&quot;note&quot;,&quot;zero_length&quot;:false,&quot;display_ref&quot;:false,&quot;referenced_target&quot;:true,&quot;element_body_field&quot;:null,&quot;siglum&quot;:&quot;*&quot;,&quot;tag_set&quot;:&quot;Annotation&quot;,&quot;display_name&quot;:&quot;Note&quot;,&quot;description&quot;:&quot;&quot;,&quot;editor_css&quot;:&quot;border-bottom: 1px dashed;&quot;,&quot;display_css&quot;:&quot;border-bottom: 1px dashed;&quot;,&quot;fields&quot;:[{&quot;id&quot;:194,&quot;name&quot;:&quot;text&quot;,&quot;display_name&quot;:&quot;Note Text&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;memo&quot;,&quot;vocab_id&quot;:null,&quot;populate_with_selected_text&quot;:false}],&quot;fixed_attributes&quot;:[]},&quot;place&quot;:{&quot;id&quot;:196,&quot;xml_tag&quot;:&quot;name&quot;,&quot;name&quot;:&quot;place&quot;,&quot;zero_length&quot;:false,&quot;display_ref&quot;:true,&quot;referenced_target&quot;:false,&quot;element_body_field&quot;:null,&quot;siglum&quot;:&quot;&quot;,&quot;tag_set&quot;:&quot;Annotation&quot;,&quot;display_name&quot;:&quot;Place&quot;,&quot;description&quot;:&quot;&quot;,&quot;editor_css&quot;:&quot;color: green;&quot;,&quot;display_css&quot;:&quot;color: green;&quot;,&quot;fields&quot;:[{&quot;id&quot;:196,&quot;name&quot;:&quot;ref&quot;,&quot;display_name&quot;:&quot;Reference&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;uri&quot;,&quot;vocab_id&quot;:null,&quot;populate_with_selected_text&quot;:null}],&quot;fixed_attributes&quot;:[{&quot;id&quot;:42,&quot;name&quot;:&quot;type&quot;,&quot;value&quot;:&quot;place&quot;}]},&quot;person&quot;:{&quot;id&quot;:195,&quot;xml_tag&quot;:&quot;name&quot;,&quot;name&quot;:&quot;person&quot;,&quot;zero_length&quot;:false,&quot;display_ref&quot;:true,&quot;referenced_target&quot;:false,&quot;element_body_field&quot;:null,&quot;siglum&quot;:&quot;&quot;,&quot;tag_set&quot;:&quot;Annotation&quot;,&quot;display_name&quot;:&quot;Person&quot;,&quot;description&quot;:&quot;&quot;,&quot;editor_css&quot;:&quot;color: blue;&quot;,&quot;display_css&quot;:&quot;color: blue;&quot;,&quot;fields&quot;:[{&quot;id&quot;:195,&quot;name&quot;:&quot;ref&quot;,&quot;display_name&quot;:&quot;Reference&quot;,&quot;description&quot;:&quot;&quot;,&quot;field_type&quot;:&quot;uri&quot;,&quot;vocab_id&quot;:null,&quot;populate_with_selected_text&quot;:null}],&quot;fixed_attributes&quot;:[{&quot;id&quot;:41,&quot;name&quot;:&quot;type&quot;,&quot;value&quot;:&quot;person&quot;}]}}" />
+</div>
+
+<script type="text/javascript">
+
+   $(document).ready(function() {
+      var seaDragonAssetsPath = "https://s3.amazonaws.com/assets-juxtaeditions/assets/"
+        var externalContentPath = "/fshgh/catalog/"
+      var publishedView = new HumEditViewer.PublishedView({
+            el: $("#hum-edit-published"),
+            seaDragonAssetsPath: seaDragonAssetsPath,
+            externalContentPath: externalContentPath });
+      publishedView.render();   
+      
+      $("#accordion .panel-heading").on("click", function(e) {
+          var icon = $('.header-chevron-icon');
+          if (icon.hasClass('glyphicon-chevron-right') ) {
+            icon.removeClass('glyphicon-chevron-right');
+            icon.addClass('glyphicon-chevron-down');
+          } else {
+            icon.removeClass('glyphicon-chevron-down');
+            icon.addClass('glyphicon-chevron-right');
+          }
+      });
+   });
+
+</script>
+
+
+      <div class="page-footer">
+</div>
+
+   </body>
+</html>
