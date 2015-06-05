@@ -132,53 +132,49 @@
    </div>
 </div>
 
-            
+               <div id="table-of-contents" class="table-of-contents">
+      <h1>Table Of Contents</h1>
+      <ul>
+            <li><a href="#1" class="anchor">
+   <h2>1</h2>
+</a>
+            <li><a href="#2" class="anchor">
+   <h2>2</h2>
+</a>
+            <li><a href="#3" class="anchor">
+   <h2>3</h2>
+</a>
+      </ul>
+   </div>
+
             <div id="reading-text" class="reading-text">
       <div id="page-116774" class="reading-page">
 
+          <a name="1"></a>
+          <div class="heading"><h2>1</h2></div>
 
         <div class="thumb-image-div col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-        <div class="reading-div col-xs-8 col-sm-8 col-md-8 col-lg-8" id="div-1"><a name='116774'></a><span data-annotation-id='116774' class='annotation humedit-div'></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco <br/></div>
-        <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[{&quot;id&quot;:116774,&quot;name&quot;:&quot;div&quot;,&quot;data&quot;:&quot;{\&quot;i\&quot;:\&quot;1\&quot;,\&quot;p\&quot;:\&quot;116769\&quot;}&quot;}]" />
+        <div class="reading-div col-xs-8 col-sm-8 col-md-8 col-lg-8" id="div-1"><a name='116774'></a><span data-annotation-id='116774' class='annotation humedit-div'></span>1Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco <br/></div>
+        <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[{&quot;id&quot;:116774,&quot;name&quot;:&quot;div&quot;,&quot;data&quot;:&quot;{\&quot;i\&quot;:\&quot;1\&quot;,\&quot;p\&quot;:\&quot;116769\&quot;,\&quot;head\&quot;:\&quot;1\&quot;}&quot;}]" />
 
       </div>
       <div id="page-116775" class="reading-page">
 
+          <a name="2"></a>
+          <div class="heading"><h2>2</h2></div>
 
         <div class="thumb-image-div col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
         <div class="reading-div col-xs-8 col-sm-8 col-md-8 col-lg-8" id="div-2"><a name='116775'></a><span data-annotation-id='116775' class='annotation humedit-div'></span>laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/></div>
-        <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[{&quot;id&quot;:116775,&quot;name&quot;:&quot;div&quot;,&quot;data&quot;:&quot;{\&quot;i\&quot;:\&quot;2\&quot;,\&quot;p\&quot;:\&quot;116769\&quot;}&quot;}]" />
+        <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[{&quot;id&quot;:116775,&quot;name&quot;:&quot;div&quot;,&quot;data&quot;:&quot;{\&quot;i\&quot;:\&quot;2\&quot;,\&quot;p\&quot;:\&quot;116769\&quot;,\&quot;head\&quot;:\&quot;2\&quot;}&quot;}]" />
 
       </div>
-      <div id="page-116786" class="reading-page">
+      <div id="page-116776" class="reading-page">
 
+          <a name="3"></a>
+          <div class="heading"><h2>3</h2></div>
 
         <div class="thumb-image-div col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
         <div class="reading-div col-xs-8 col-sm-8 col-md-8 col-lg-8" id="div-3"></div>
-        <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
-
-      </div>
-      <div id="page-116788" class="reading-page">
-
-
-        <div class="thumb-image-div col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-        <div class="reading-div col-xs-8 col-sm-8 col-md-8 col-lg-8" id="div-4"></div>
-        <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
-
-      </div>
-      <div id="page-116779" class="reading-page">
-
-
-        <div class="thumb-image-div col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-        <div class="reading-div col-xs-8 col-sm-8 col-md-8 col-lg-8" id="div-5"></div>
-        <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
-
-      </div>
-      <div id="page-116787" class="reading-page">
-
-
-        <div class="thumb-image-div col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-        <div class="reading-div col-xs-8 col-sm-8 col-md-8 col-lg-8" id="div-6"></div>
         <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
 
       </div>
@@ -192,7 +188,7 @@
 
 
         // convert to real JSON
-        var page_divs = JSON.parse( '{&quot;1&quot;:[],&quot;2&quot;:[],&quot;3&quot;:[],&quot;4&quot;:[],&quot;5&quot;:[],&quot;6&quot;:[]}'.replace( /&quot;/g, "\"" ) );
+        var page_divs = JSON.parse( '{&quot;1&quot;:[],&quot;2&quot;:[],&quot;3&quot;:[]}'.replace( /&quot;/g, "\"" ) );
 
         // manually add the divs to the page once it is loaded
         $.each( page_divs, function( i, divs ) {
@@ -204,7 +200,7 @@
         });
 
         // convert to real JSON
-        var images = JSON.parse( '{&quot;1&quot;:[],&quot;2&quot;:[],&quot;3&quot;:[],&quot;4&quot;:[],&quot;5&quot;:[],&quot;6&quot;:[]}'.replace( /&quot;/g, "\"" ) );
+        var images = JSON.parse( '{&quot;1&quot;:[],&quot;2&quot;:[],&quot;3&quot;:[]}'.replace( /&quot;/g, "\"" ) );
 
         // manually add the images to the page once it is loaded
         $.each( images, function( page, images ) {
