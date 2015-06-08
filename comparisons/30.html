@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Side-by-side comparison</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="cache-control" content="max-age=0" />
+      <meta http-equiv="cache-control" content="no-cache" />
+      <meta http-equiv="expires" content="0" />
+      <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+      <meta http-equiv="pragma" content="no-cache" />
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+      
+      <link rel="stylesheet" href="../css/hum_edit_viewer.css">
+      <link rel="stylesheet" href="../css/common.css">
+      <link rel="stylesheet" href="../css/comparison.css">
+
+      <!-- JUXTA WS visualization stylesheet -->
+      <link href="https://s3.amazonaws.com/assets-juxtaeditions/assets/sidebyside.css" rel="stylesheet" type="text/css">
+
+      <!-- JUXTA WS dependencies -->
+      <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+      <script type="text/javascript" src="https://s3.amazonaws.com/assets-juxtaeditions/assets/raphael-min.js"></script>
+      <script type="text/javascript" src="https://s3.amazonaws.com/assets-juxtaeditions/assets/jquery.mousewheel.min.js"></script>
+
+      <!-- JUXTA WS scripts -->
+      <script type="text/javascript" src="https://s3.amazonaws.com/assets-juxtaeditions/assets/juxta-ws-common.js"></script>
+      <script type="text/javascript" src="https://s3.amazonaws.com/assets-juxtaeditions/assets/sidebyside.js"></script>
+      <script src="../js/comparison.js"></script>
+      
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+   </head>
+   <body>
+      <div class="page-header">
+
+  <div align="center" id="headerimg">
+    <a href="/index.html"><img alt="Melville Electronic Library - a critical archive" border="0" height="96" src="../images/header_top.jpg" width="1024"/></a>
+  </div>
+
+  <div align="center" id="headernav">
+    <a href="/index.html">HOME</a> |
+    <a href="/editions.html">EDITIONS</a> |
+    <a href="/manuscripts.html">MANUSCRIPTS</a> |
+    <a href="/sources.html">SOURCES</a> |
+    <a href="/gallery.html">GALLERY</a> |
+    <a href="/adaptation.html">ADAPTATION</a> |
+    <a href="/biography.html">BIOGRAPHY</a> |
+    <a href="/criticism.html">CRITICISM</a> |
+    <a href="/about_us.html">ABOUT US</a> |
+    <a href="/mel_camp.html">MELCamp</a>
+  </div>
+
+  <div id="header_nav_bg">&nbsp;
+  </div>
+
+</div>		 
+
+
+      <div id="main-content">
+         <div class="comparison-view">
+                <div id="juxta-ws-content" class="juxta-ws-content">
+
+<span id="connector-prototype" style="display:none"></span>
+<span id="lit-connector-prototype" style="display:none"></span>
+<span id="move-conn-prototype" style="display:none"></span>
+
+<div id="side-by-side">
+    <span id="embedded" style="display: none">true</span>
+    <span id="setId" style="display: none">270</span>
+    <span id="witness-count" style="display: none">2</span>
+       
+    <div id="left-witness" class="sbs-witness">
+        <div class="header">
+            <div class="sbs-title" title="three">three</div>
+            <a id="change-left" class="juxta-button sbs-button">Change</a>
+            <div style="clear: both;"></div>
+        </div>
+        <span id="left-witness-id" style="display: none">786</span>
+        <div id="left-witness-text" class="witness-text">
+This is front matter. I am creating a bold tag here.<br/>
+<br/>
+more text<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+January 27, 2015 Dear Members of the Standards Committee, My name is Eileen O&rsquo;Rourke, I am the Marketing Administrator for the Virginia Institute of Blacksmithing and work <span id="diff-70" class="diff change" juxta:range="241,244" juxta:connect-to="71"">for</span> Dale Morse, an artisan blacksmith, whom I have nominated for Master Artisan of Virginia. From the age of nine, Dale began his love for the trade of artistic metal work and never looked back. His early training took place in the forges of the Booker T. Washington National Monument in Franklin County, VA where he and his family exhibited historically accurate demonstrations of everyday life in the rural 1860&rsquo;s era tobacco plantation. He started his <span id="diff-72" class="diff change" juxta:range="696,701" juxta:connect-to="73"">first</span> business from his home when he was only 14 years of age then continued his education at Warren Wilson College in Swannanoa, NC where he established a blacksmithing shop for the college. Dale <span id="diff-76" class="diff change" juxta:range="893,909" juxta:connect-to="77"">further built on</span> his <span id="diff-82" class="diff change" juxta:range="914,926" juxta:connect-to="83"">knowledge of</span> blacksmithing at the Penland and John C. Campbell craft schools and to this day continues to be a regular instructor at both Warren Wilson and the John C. Campbell School<span id="diff-86" class="diff change" juxta:range="1097,1097" juxta:connect-to="87""></span>. He has studied under Manfred Bredhol of the Vulkanschmiede in Aachen, Germany, Gabrielle Curtolo in San Servolo, Venice, Italy and Joseph Stokes of Shropshire, England. Through his years of experience and his teachings, Dale&rsquo;s approach is to use a minimum of modern welding preferring traditional joinery techniques that will enhance the aesthetic appeal of his work. His methods show the metal was skillfully manipulated while hot, lending a flowing artistry to the finished piece. As proprietor of Clay Hill Forge, an artisan blacksmithing studio near Waynesboro, VA, Dale has formed ironwork creations that grace homes and businesses in the Southeast United States including Virginia, NC, SC and FL. His work is not unfamiliar to those of us who live locally either, as <span id="diff-90" class="diff change" juxta:range="1872,1882" juxta:connect-to="91"">an example</span>, all of the<span id="diff-94" class="diff change" juxta:range="1894,1894" juxta:connect-to="95""></span> iron work at Devils Backbone Brewery in Roseland, VA was <span id="diff-100" class="diff change" juxta:range="1952,1956" juxta:connect-to="101"">done</span> by Dale. Dale continues to bring blacksmithing <span id="diff-102" class="diff change" juxta:range="2004,2012" juxta:connect-to="103"">interest</span> and skill to students of <span id="diff-104" class="diff change" juxta:range="2038,2042" juxta:connect-to="105"">many</span> ages and <span id="diff-106" class="diff change" juxta:range="2052,2058" juxta:connect-to="107"">coming</span> from many states to the Virginia Institute of Blacksmithing. Clay Hill Forge is the founding partner of the Virginia Institute of Blacksmithing (VIB), Dale is the co-proprietor. The Virginia Institute of Blacksmithing was founded to offer information and instruction in traditional blacksmithing ranging from beginning blacksmithing, technique and project driven classes to advanced certification. Booker T. Washington&rsquo;s philosophy that Dale learned at the age of nine, is the adage and teaching philosophy at VIB today; &lsquo;Teaching of the Hand and the Mind&rsquo;. VIB is currently the only regional blacksmithing school that offers a certification program that is designed to train interested students in the art of architectural and ornamental metalwork at a professional level. The program was designed by Dale and is recognized by Blue Ridge Community College. Dale is also a Guild Mentor in the Shenandoah Valley Blacksmithing Guild. Dale is a consummate ornamental blacksmith and truly enjoys sharing his skill and art to others so that they can experience the intricacies of manipulating hot metal to its more artistic form. He is also very eager to discover new skills and techniques, so when he encounters someone in the trade who knows how to do something new or better, he is appreciative and keen to learn. Thank you for considering Dale Morse for the honor of Master Artisan of Virginia<span id="diff-108" class="diff change" juxta:range="3451,3451" juxta:connect-to="109""></span>. Sincerely, Eileen O&rsquo;Rourke<br/>
+<br/>
+<br/>
+<br/>
+This is back matter<br/>
+<br/>
+more text<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+        </div>
+        <div class="more-scroller"><p class="more-scroller"/></div>
+        <div style="clear: both;"></div>
+    </div>
+    
+    <div id="scroll-mode">
+        <img id="scroll-mode-img" src="https://s3.amazonaws.com/assets-juxtaeditions/assets/lock.gif"/>
+    </div>
+    
+    <div id="connections-div" class="canvas-div"></div> 
+    
+    <div id="right-witness" class="sbs-witness">
+        <div class="header">
+            <div class="sbs-title" title="two">two</div>
+            <a id="change-right" class="juxta-button sbs-button">Change</a>
+            <a id="toggle-moves" class="juxta-button sbs-button pushed" style="display:none" title="Toggle moves visibility">Moves</a>
+            <div style="clear: both;"></div>
+        </div>
+        <span id="right-witness-id" style="display: none">785</span>
+        <div id="right-witness-text" class="witness-text">
+This is front matter. I am creating a bold tag here.<br/>
+<br/>
+more text<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+January 27, 2015 Dear Members of the Standards Committee, My name is Eileen O&rsquo;Rourke, I am the Marketing Administrator for the Virginia Institute of Blacksmithing and work <span id="diff-71" class="diff change" juxta:range="241,245" juxta:connect-to="70"">with</span> Dale Morse, an artisan blacksmith, whom I have nominated for Master Artisan of Virginia. From the age of nine, Dale began his love for the trade of artistic metal work and never looked back. His early training took place in the forges of the Booker T. Washington National Monument in Franklin County, VA where he and his family exhibited historically accurate demonstrations of everyday life in the rural 1860&rsquo;s era tobacco plantation. He started his <span id="diff-73" class="diff change" juxta:range="697,714" juxta:connect-to="72"">own blacksmithing</span> business from his home when he was only 14 years of age then continued his education at Warren Wilson College in Swannanoa, NC where he established a blacksmithing shop for the college. Dale <span id="diff-77" class="diff change" juxta:range="906,915" juxta:connect-to="76"">furthered</span> his <span id="diff-83" class="diff change" juxta:range="920,932" juxta:connect-to="82"">education in</span> blacksmithing at the Penland and John C. Campbell craft schools and to this day continues to be a regular instructor at both Warren Wilson and the John C. Campbell School. <span id="diff-87" class="diff change" juxta:range="1105,1116" juxta:connect-to="86"">In addition</span>, he has studied under Manfred Bredhol of the Vulkanschmiede in Aachen, Germany, Gabrielle Curtolo in San Servolo, Venice, Italy and Joseph Stokes of Shropshire, England. Through his years of experience and his teachings, Dale&rsquo;s approach is to use a minimum of modern welding preferring traditional joinery techniques that will enhance the aesthetic appeal of his work. His methods show the metal was skillfully manipulated while hot, lending a flowing artistry to the finished piece. As proprietor of Clay Hill Forge, an artisan blacksmithing studio near Waynesboro, VA, Dale has formed ironwork creations that grace homes and businesses in the Southeast United States including Virginia, NC, SC and FL. His work is not unfamiliar to those of us who live locally either, as<span id="diff-91" class="diff change" juxta:range="1890,1890" juxta:connect-to="90""></span> all of the <span id="diff-95" class="diff change" juxta:range="1902,1928" juxta:connect-to="94"">chandeliers and additional</span> iron work at Devils Backbone Brewery in Roseland, VA was <span id="diff-101" class="diff change" juxta:range="1986,1993" juxta:connect-to="100"">created</span> by Dale. Dale continues to bring blacksmithing <span id="diff-103" class="diff change" juxta:range="2041,2050" juxta:connect-to="102"">education</span> and skill to students of <span id="diff-105" class="diff change" juxta:range="2076,2079" juxta:connect-to="104"">all</span> ages and<span id="diff-107" class="diff change" juxta:range="2088,2088" juxta:connect-to="106""></span> from many states to the Virginia Institute of Blacksmithing. Clay Hill Forge is the founding partner of the Virginia Institute of Blacksmithing (VIB), Dale is the co-proprietor. The Virginia Institute of Blacksmithing was founded to offer information and instruction in traditional blacksmithing ranging from beginning blacksmithing, technique and project driven classes to advanced certification. Booker T. Washington&rsquo;s philosophy that Dale learned at the age of nine, is the adage and teaching philosophy at VIB today; &lsquo;Teaching of the Hand and the Mind&rsquo;. VIB is currently the only regional blacksmithing school that offers a certification program that is designed to train interested students in the art of architectural and ornamental metalwork at a professional level. The program was designed by Dale and is recognized by Blue Ridge Community College. Dale is also a Guild Mentor in the Shenandoah Valley Blacksmithing Guild. Dale is a consummate ornamental blacksmith and truly enjoys sharing his skill and art to others so that they can experience the intricacies of manipulating hot metal to its more artistic form. He is also very eager to discover new skills and techniques, so when he encounters someone in the trade who knows how to do something new or better, he is appreciative and keen to learn. Thank you for considering Dale Morse for the honor of Master Artisan of Virginia, <span id="diff-109" class="diff change" juxta:range="3483,3571" juxta:connect-to="108"">as I feel he exemplifies all the necessary talent and skill to be called &ldquo;Master Artisan</span>&rdquo;. Sincerely, Eileen O&rsquo;Rourke<br/>
+<br/>
+<br/>
+<br/>
+This is back matter<br/>
+<br/>
+more text<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+        </div>
+    </div>
+    
+    <div style="clear: both;"></div>
+</div>
+
+
+<!-- popup for selecting a new witness -->
+<div class="witnesses-popup">
+    <span id="side" style="display: none"></span>
+    <div class="header">Select Witness</div>
+    <div id="wit-scroller">
+       <table class="witness-select" size="2">
+               <tr class="wit-sel">
+                  <td class="wit-sel">
+                     <p class="witness-option" id="sel-sbs-wit-786" title="three">three</p>
+                  </td>
+               </tr>
+               <tr class="wit-sel">
+                  <td class="wit-sel">
+                     <p class="witness-option" id="sel-sbs-wit-785" title="two">two</p>
+                  </td>
+               </tr>
+       </table>
+    </div>
+    <div class="popup-buttons">
+        <a id="sbs-ok-button" class="juxta-button sbs-button">OK</a>
+        <a id="sbs-cancel-button" class="juxta-button sbs-button">Cancel</a>
+    </div>
+</div>
+
+    </div>     
+
+
+<div id="wait-popup">
+   <img id="wait-spinner" src="https://s3.amazonaws.com/assets-juxtaeditions/assets/loader.gif" />
+   <p id="wait-title" style="text-align: center;">
+      Please Wait...
+   </p>
+</div>
+<script type="text/javascript">
+   $(document).ready( function( ) {
+       // diff click handler; call if the handler is defined, ignore otherwise.
+       $( ".diff" ).click( function( ) {
+           if( typeof diff_clicked === "function" ) {
+               var uuid = $(this).attr("uuid");
+               diff_clicked( uuid );
+           }
+       });
+
+   });
+</script>
+
+         </div>
+      </div>
+
+      <div class="page-footer">
+</div>
+
+   </body>
+</html>
