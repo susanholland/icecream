@@ -1023,6 +1023,15 @@ body {
 #hum-edit-published .toolbar .right {
   float: right; }
 
+#hum-edit-published #document-viewport.thumbnails_and_text {
+  background: white;
+  padding: 0; }
+
+#hum-edit-published #document-viewport.thumbnails_and_text #reading-text.reading-text {
+  margin: 0;
+  background-color: white;
+  min-width: 755px; }
+
 #hum-edit-published #document-viewport {
   background: #dcdcdc; }
 
@@ -1046,15 +1055,7 @@ body {
   margin-top: 40px; }
 
 #hum-edit-published #document-viewport .reading-page {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-top: 60px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 80px;
-  width: 50%;
   background: white;
-  box-shadow: 3px 3px 4px #000;
   clear: both;
   display: inline-block; }
 
@@ -1078,12 +1079,14 @@ body {
   box-shadow: 3px 3px 4px #000; }
 
 #hum-edit-published #document-viewport .thumb-image-div {
-  padding-top: 12px;
-  clear: both; }
+  min-width: 180px;
+  max-width: 180px; }
+
+#hum-edit-published #document-viewport .reading-div {
+  min-width: 515px; }
 
 #hum-edit-published #document-viewport .thumb-image {
-  position: absolute;
-  left: -40%; }
+  border: 1px solid #666; }
 
 #hum-edit-published #document-viewport .thumb-placeholder {
   color: lightgray;
