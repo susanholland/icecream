@@ -138,7 +138,7 @@
 
 
         <div class="thumb-image-div col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
-        <div class="reading-div col-xs-8 col-sm-8 col-md-8 col-lg-8" id="div-1"></div>
+        <div class="reading-div col-xs-8 col-sm-8 col-md-8 col-lg-8" id="div-1"><a name='117019'></a><span data-annotation-id='117019' class='annotation humedit-pb'></span><a name='117022'></a><span data-annotation-id='117022' class='annotation humedit-pb'><br/></span></div>
         <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
 
       </div>
@@ -164,7 +164,7 @@
         });
 
         // convert to real JSON
-        var images = JSON.parse( '{&quot;1&quot;:[]}'.replace( /&quot;/g, "\"" ) );
+        var images = JSON.parse( '{&quot;1&quot;:[{&quot;aid&quot;:117019,&quot;guid&quot;:&quot;1353dde8-1775-43e5-bf64-dc5196b44b78&quot;,&quot;thumbnail_url&quot;:&quot;https://staging-uploads-juxtaeditions.s3.amazonaws.com/zoom_data1353dde8-1775-43e5-bf64-dc5196b44b78text%2B1-1.jpeg&quot;},{&quot;aid&quot;:117022,&quot;guid&quot;:&quot;a307e75d-b440-4605-9e27-6454be84f3bd&quot;,&quot;thumbnail_url&quot;:&quot;https://staging-uploads-juxtaeditions.s3.amazonaws.com/zoom_dataa307e75d-b440-4605-9e27-6454be84f3bdtext%2B7-2.jpg&quot;}]}'.replace( /&quot;/g, "\"" ) );
 
         // manually add the images to the page once it is loaded
         $.each( images, function( page, images ) {
