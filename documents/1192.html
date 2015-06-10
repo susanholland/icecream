@@ -136,18 +136,18 @@
             <div id="reading-text" class="reading-text">
       <div id="page-117016" class="reading-page">
 
-
         <div class="thumb-image-div col-xs-3 col-sm-3 col-md-3 col-lg-3">
                <img class="thumb-image" id="thumb-117019" guid="" src="https://staging-uploads-juxtaeditions.s3.amazonaws.com/zoom_data1353dde8-1775-43e5-bf64-dc5196b44b78text%2B1-1.jpeg">  
                <img class="thumb-image" id="thumb-117022" guid="" src="https://staging-uploads-juxtaeditions.s3.amazonaws.com/zoom_dataa307e75d-b440-4605-9e27-6454be84f3bdtext%2B7-2.jpg">  
         </div>
         <div class="reading-div col-xs-9 col-sm-9 col-md-9 col-lg-9" id="div-1">
-           <a name='117019'></a><span data-annotation-id='117019' class='annotation humedit-pb'></span><a name='117022'></a><span data-annotation-id='117022' class='annotation humedit-pb'><br/></span>
+        
+            <a name='117019'></a><span data-annotation-id='117019' class='annotation humedit-pb'></span><a name='117022'></a><span data-annotation-id='117022' class='annotation humedit-pb'><br/></span>
         </div>
         <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
-
       </div>
 </div>
+
 
 <script type="text/javascript">
 
@@ -166,15 +166,45 @@
 	          $(this).css("top", annoTop+"px");
 	          $(this).css("position", "absolute");
 	       } else {
-	           $(this).css("position", "absolute");  
+	    	    var annoId = $(this).attr("id").split("-")[1];  
+	          var anno = $(".humedit-pb[data-annotation-id='"+annoId+"']");
+	          var annoTop = anno.position().top;
+	          $(this).css("top", annoTop+"px");
+	          $(this).css("position", "absolute");  
 	       }
 	       priorImg = $(this);
-	    });   
+	    });  
+	    
+	    if ( priorImg != null ) {
+		    var lastBottom = priorImg.position().top + priorImg.outerHeight(true);
+		    var readingTxt = priorImg.closest(".reading-page");
+		    var readBottom = readingTxt.height();
+		    if ( lastBottom > readBottom ) {
+		    	readingTxt.height( readingTxt.height() + (lastBottom-readBottom)+ 20 );
+		    }
+	    }
 	};
 
    $(document).ready( function( ) {
 
+
+	   // convert to real JSON
+	   var page_divs = JSON.parse( '{&quot;1&quot;:[]}'.replace( /&quot;/g, "\"" ) );
+
+	   // manually add the divs to the page once it is loaded
+	   $.each( page_divs, function( i, divs ) {
+	       $.each( divs, function( j, div ) {
+	           if( div['id'] && div['heading'] ) {
+	               $('<h3>' + div['heading'] + '</h3>').insertBefore($(".reading-div span[data-annotation-id~='" + div['id'] + "']").filter(":first"));
+	           }
+	       });
+	   });
+	   
     	layoutThumbs();
+    	
+    	if ( $(".humedit-pb").length == 1 ) {
+    		$(".humedit-pb").addClass("fix");	
+    	}
 
       // hover over functionality...
       $( ".thumb-image" ).hover(function( ) {

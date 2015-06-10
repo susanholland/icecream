@@ -1023,6 +1023,17 @@ body {
 #hum-edit-published .toolbar .right {
   float: right; }
 
+#hum-edit-published #document-viewport.text_only {
+  background: white;
+  padding: 0; }
+
+#hum-edit-published #document-viewport.text_only #text-only {
+  margin: 0;
+  background-color: white; }
+
+#hum-edit-published #document-viewport.text_only .textonly-div {
+  padding-bottom: 20px; }
+
 #hum-edit-published #document-viewport.thumbnails_and_text {
   background: white;
   padding: 0; }
@@ -1030,7 +1041,12 @@ body {
 #hum-edit-published #document-viewport.thumbnails_and_text #reading-text.reading-text {
   margin: 0;
   background-color: white;
-  min-width: 755px; }
+  min-width: 755px;
+  min-height: 200px; }
+
+#hum-edit-published #document-viewport.thumbnails_and_text #reading-text.reading-text .humedit-pb.fix {
+  display: inline-block;
+  min-width: 515px; }
 
 #hum-edit-published #document-viewport {
   background: #dcdcdc; }
@@ -1066,9 +1082,6 @@ body {
   background: white;
   clear: both;
   display: inline-block; }
-
-#hum-edit-published #document-viewport .reading-page .heading {
-  padding-left: 15px; }
 
 #hum-edit-published #document-viewport .page-image .dragon {
   margin-top: 20px;
