@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <title>no image</title>
+      <title>page order</title>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
       <meta name="viewport" content="width=device-width">
@@ -50,7 +50,7 @@
 </div>		 
 
 
-      <h1 class="doc-title">no image</h1>
+      <h1 class="doc-title">page order</h1>
       	  <style type="text/css">
 			.humedit-add { font-size: 90%; font-style: italic; }
 			.humedit-corr { border-bottom: 1px dashed #999; }
@@ -81,7 +81,7 @@
               </select>
            </div>
       </div>
-      <div id="document-viewport" class="panel-body thumbnails_and_text">
+      <div id="document-viewport" class="panel-body images_and_text">
          
           <div class="col-sm-12 panel-group" id="accordion">
    <div class="tei-header-editor panel panel-default" id="published-header">
@@ -106,7 +106,7 @@
    <table class="header block">
          <tr>
             <td class = "header name">Title:</td>
-            <td>no image</td>
+            <td>page order</td>
          </tr>
    
       <tr class="sep"><td colspan="2"/></tr>
@@ -132,101 +132,33 @@
    </div>
 </div>
 
-            
-            <div id="reading-text" class="reading-text">
-      <div id="page-117276" class="reading-page">
-
-        <div class="thumb-image-div col-xs-3 col-sm-3 col-md-3 col-lg-3">
-               <img class="thumb-image" id="thumb-117279" guid="" src="https://staging-uploads-juxtaeditions.s3.amazonaws.com/zoom_datae0189961-0c55-408f-a06a-3d93bca9d523text%2B1-1.jpeg">  
-        </div>
-        <div class="reading-div col-xs-9 col-sm-9 col-md-9 col-lg-9" id="div-1">
-        
-            <a name='117279'></a><span data-annotation-id='117279' class='annotation humedit-pb'></span>
-        </div>
-        <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
+                 <div id="page-117367" class="sbs-page">
+      <div class="page-image col-xs-6 col-sm-6 col-md-6 col-lg-6">
       </div>
+      <div class="page col-xs-6 col-sm-6 col-md-6 col-lg-6" data-page-number="1">
+        <div class="diplomatic"><div class='line'>I added this page first. </div>
 </div>
-
-
-<script type="text/javascript">
-
-	var layoutThumbs = function() {
-	    // line the thumbs with the top of the span (skip the first, it already there)
-	    var priorImg = null;
-	    $(".thumb-image").each( function(val) {
-	       if ( priorImg != null ) {
-	          var annoId = $(this).attr("id").split("-")[1];  
-	          var anno = $(".humedit-pb[data-annotation-id='"+annoId+"']");
-	          var annoTop = anno.position().top;
-	          var priorBottom = priorImg.position().top + priorImg.outerHeight(true);
-	          if (annoTop < priorBottom) {
-	             annoTop = priorBottom+5;
-	          }
-	          $(this).css("top", annoTop+"px");
-	          $(this).css("position", "absolute");
-	       } else {
-	    	    var annoId = $(this).attr("id").split("-")[1];  
-	          var anno = $(".humedit-pb[data-annotation-id='"+annoId+"']");
-	          var annoTop = anno.position().top;
-	          $(this).css("top", annoTop+"px");
-	          $(this).css("position", "absolute");  
-	       }
-	       priorImg = $(this);
-	    });  
-	    
-	    if ( priorImg != null ) {
-		    var lastBottom = priorImg.position().top + priorImg.outerHeight(true);
-		    var readingTxt = priorImg.closest(".reading-page");
-		    var readBottom = readingTxt.height();
-		    if ( lastBottom > readBottom ) {
-		    	readingTxt.height( readingTxt.height() + (lastBottom-readBottom)+ 20 );
-		    }
-	    }
-	};
-
-   $(document).ready( function( ) {
-
-
-	   // convert to real JSON
-	   var page_divs = JSON.parse( '{&quot;1&quot;:[]}'.replace( /&quot;/g, "\"" ) );
-
-	   // manually add the divs to the page once it is loaded
-	   $.each( page_divs, function( i, divs ) {
-	       $.each( divs, function( j, div ) {
-	           if( div['id'] && div['heading'] ) {
-	               $('<h3>' + div['heading'] + '</h3>').insertBefore($(".reading-div span[data-annotation-id~='" + div['id'] + "']").filter(":first"));
-	           }
-	       });
-	   });
-	   
-    	layoutThumbs();
-    	
-    	if ( $(".humedit-pb").length == 1 ) {
-    		$(".humedit-pb").addClass("fix");	
-    	}
-
-      // hover over functionality...
-      $( ".thumb-image" ).hover(function( ) {
-         var aid = $( this).attr( "id").replace( "thumb-", "" );
-         $( ".reading-div span[data-annotation-id~='" + aid + "']" ).addClass( "reading-highlight");
-      }, function( ) {
-         var aid = $( this).attr( "id").replace( "thumb-", "" );
-         $( ".reading-div span[data-annotation-id~='" + aid + "']" ).removeClass( "reading-highlight");
-      });
-
-      // thumbnail click handler; call if the handler is defined, ignore otherwise.
-      $( ".thumb-image" ).click( function( ) {
-         if( typeof thumbnail_clicked === "function" ) {
-            var guid = $(this).attr("guid");
-            thumbnail_clicked(guid);
-         }
-      });
-   });
-   
-   $( window ).resize(function() {
-	   layoutThumbs();
-   });
-</script>
+      </div>
+      <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
+    </div>
+    <div id="page-117370" class="sbs-page">
+      <div class="page-image col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      </div>
+      <div class="page col-xs-6 col-sm-6 col-md-6 col-lg-6" data-page-number="2">
+        <div class="diplomatic"><div class='line'>I inserted this page between the first and second pages. </div>
+</div>
+      </div>
+      <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
+    </div>
+    <div id="page-117369" class="sbs-page">
+      <div class="page-image col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      </div>
+      <div class="page col-xs-6 col-sm-6 col-md-6 col-lg-6" data-page-number="3">
+        <div class="diplomatic"><div class='line'>I added this page second. </div>
+</div>
+      </div>
+      <input id="annotationsJSON" name="annotationsJSON" type="hidden" value="[]" />
+    </div>
 
 
       </div>
